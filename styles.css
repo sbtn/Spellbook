@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+body {
+  padding: 20px;
+  background-color: #201509;
+  font-family: 'VT323';
+  font-size: 23px;
+  line-height: 1.1em;
+  -webkit-font-smoothing: none;
+  color: #FBDA40;
+  text-shadow: 0 0 6px #FFDB49;
+}
+
+/* green
+color: #85F993;
+text-shadow: 0 0 2px #63BC95;
+*/
+
+.spell {
+  margin-top: 120px;
+  width: 600px;
+}
+
+dt {
+  margin-top: 10px;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Spellbook</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Spellbook</h1>
+  <div id="spellbook">
+    <div class="index">
+      <ul v-for="spell in spells">
+        <li><a v-bind:href="'#' + spell.name">{{spell.name}}</a></li>
+      </ul>
+    </div>
+    <div class="spell" v-for="spell in spells">
+      <h2><a v-bind:name="spell.name">{{spell.name}}</a></h2>
+      <p>Level {{spell.level}} {{spell.school}}</p>
+      <p v-for="description in spell.description">{{ description }}</p>
+      <dl>
+        <dt><strong>Casting time</strong></dt>
+        <dd>{{spell.casting_time}}</dd>
+        <dt><strong>Duration</strong></dt>
+        <dd>{{spell.duration}}</dd>
+        <dt><strong>Range</strong></dt>
+        <dd>{{spell.range}} feet</dd>
+        <dt><strong>Components</strong></dt>
+        <dd>{{spell.components}}</dd>
+        <dt v-if="spell.material"><strong>Material</strong></dt>
+        <dd>{{spell.material}}</dd>
+        <dt v-if="spell.higher_levels"><strong>At higher levels</strong></dt>
+        <dd>{{spell.higher_levels}}</dd>
+      </dl>
+    </div>
+  </div>
+  <script src="vue.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
