@@ -18,7 +18,8 @@
     <div class="spell" v-for="spell in spells">
       <h2><a v-bind:name="spell.name">{{spell.name}}</a></h2>
       <p>Level {{spell.level}} {{spell.school}}</p>
-      <p v-for="description in spell.description">{{ description }}</p>
+      <p><span v-for="class_name in spell.class">{{class_name}} </span></p>
+      <p v-for="description in spell.description">{{description}}</p>
       <dl>
         <dt><strong>Casting time</strong></dt>
         <dd>{{spell.casting_time}}</dd>
@@ -28,6 +29,14 @@
         <dd>{{spell.range}} feet</dd>
         <dt><strong>Components</strong></dt>
         <dd>{{spell.components}}</dd>
+        <div class="damage" v-if="spell.damage">
+          <dt><strong>Damage</strong></dt>
+          <dd>{{spell.damage}}</dd>
+          <dt><strong>Damage type</strong></dt>
+          <dd>{{spell.damage_type}}</dd>
+          <dt><strong>Spell Attack</strong></dt>
+          <dd>{{spell.spell_attack}}</dd>
+        </div>
         <dt v-if="spell.material"><strong>Material</strong></dt>
         <dd>{{spell.material}}</dd>
         <dt v-if="spell.higher_levels"><strong>At higher levels</strong></dt>
@@ -36,6 +45,7 @@
     </div>
   </div>
   <script src="vue.js"></script>
+  <script src="spells.json"></script>
   <script src="index.js"></script>
 </body>
 
