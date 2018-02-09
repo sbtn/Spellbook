@@ -10,12 +10,16 @@
 <body>
   <h1>Spellbook</h1>
   <div id="spellbook">
-    <div class="index">
+    <p><input type="search" name="spell_search" v-model="search" placeholder="Search spell.."></p>
+
+    <!-- <div class="index">
       <ul v-for="spell in spells">
         <li><a v-bind:href="'#' + spell.name">{{spell.name}}</a></li>
       </ul>
-    </div>
-    <div class="spell" v-for="spell in spells">
+    </div> -->
+
+    <div class="spell" v-for="spell in searchFilter">
+
       <h2><a v-bind:name="spell.name">{{spell.name}}</a></h2>
       <p>Level {{spell.level}} {{spell.school}}</p>
       <p><span v-for="class_name in spell.class">{{class_name}} </span></p>
@@ -42,7 +46,10 @@
         <dt v-if="spell.higher_levels"><strong>At higher levels</strong></dt>
         <dd>{{spell.higher_levels}}</dd>
       </dl>
+
     </div>
+
+
   </div>
   <script src="vue.js"></script>
   <script src="spells.json"></script>
